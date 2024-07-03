@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Pokemon } from '../types/pokemon';
-import PokemonCard from './PokemonCard';
+import { Pokemon } from '../../types/pokemon';
+import PokemonCard from '../PokemonCard';
 
 function PokemonList() {
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);

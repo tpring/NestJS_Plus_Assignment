@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Pokemon } from '../types/pokemon';
+import { Pokemon } from '../../types/pokemon';
 
 type PokemonCardProps = {
     pokemon: Pokemon;
