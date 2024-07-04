@@ -6,16 +6,31 @@ import PokemonCard from '../PokemonCard';
 
 function PokemonList() {
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+    const [loading, setLoading] = useState(true); // 로딩 상태 추가
 
     useEffect(() => {
         const fetchPokemons = async () => {
-            const response = await fetch('/api/pokemons');
-            const data = await response.json();
-            setPokemons(data);
+            try {
+                const response = await fetch('/api/pokemons');
+                const data = await response.json();
+                setPokemons(data);
+            } catch (error) {
+                console.error('Failed to fetch pokemons:', error);
+            } finally {
+                setLoading(false);
+            }
         };
 
         fetchPokemons();
     }, []);
+
+    if (loading) {
+        return (
+            <div className="flex items-center justify-center h-screen text-xl font-semibold">
+                도감 내용을 불러오고 있습니다...
+            </div>
+        );
+    }
 
     return (
         <div className="p-4 bg-black">

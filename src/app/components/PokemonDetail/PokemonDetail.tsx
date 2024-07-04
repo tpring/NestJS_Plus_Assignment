@@ -1,4 +1,5 @@
 import { Pokemon } from '@/app/types/pokemon';
+import Link from 'next/link';
 
 interface PokemonDetailProps {
     pokemon: Pokemon;
@@ -35,9 +36,9 @@ const PokemonDetail: React.FC<PokemonDetailProps> = ({ pokemon }) => {
                     ))}
                 </ul>
                 <div className="flex justify-center mt-6">
-                    <a href="/pokemons" className="text-blue-500 hover:underline">
+                    <Link href="/" className="text-blue-500 hover:underline">
                         뒤로 가기
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
