@@ -6,7 +6,7 @@ import PokemonCard from '../PokemonCard';
 
 function PokemonList() {
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-    const [loading, setLoading] = useState(true); // 로딩 상태 추가
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchPokemons = async () => {
@@ -15,7 +15,7 @@ function PokemonList() {
                 const data = await response.json();
                 setPokemons(data);
             } catch (error) {
-                console.error('Failed to fetch pokemons:', error);
+                console.error('error:', error);
             } finally {
                 setLoading(false);
             }
@@ -33,9 +33,9 @@ function PokemonList() {
     }
 
     return (
-        <div className="p-4 bg-black">
-            <h1 className="text-2xl font-bold my-5 text-center text-slate-50">Pokémon List</h1>
-            <div className="flex flex-wrap justify-center w-[1080px] mx-auto">
+        <div className="p-4 min-h-screen">
+            <h1 className="text-4xl font-extrabold my-12 text-center text-yellow-700">Pokémon List</h1>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 max-w-screen-xl mx-auto">
                 {pokemons.map((pokemon) => (
                     <PokemonCard key={pokemon.id} pokemon={pokemon} />
                 ))}
