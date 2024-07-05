@@ -2,8 +2,8 @@ import PokemonList from './components/PokemonList/PokemonList';
 
 export default function Home() {
     return (
-        <div>
+        <main>
             <PokemonList />
-        </div>
+        </main>
     );
 }
