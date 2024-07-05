@@ -27,7 +27,7 @@ function PokemonList() {
     if (loading) {
         return (
             <div className="flex items-center justify-center h-screen text-xl font-semibold">
-                도감 내용을 불러오고 있습니다...
+                <p className="animate-bounce text-yellow-700">도감 내용을 불러오고 있습니다...</p>
             </div>
         );
     }
